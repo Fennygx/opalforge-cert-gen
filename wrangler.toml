@@ -1,0 +1,14 @@
+name = "cert-generator-worker"
+main = "src/index.js"
+compatibility_date = "2025-11-25"
+
+# D1 Database
+[[d1_databases]]
+binding = "CERT_DB"
+database_name = "cert_db"
+database_id = "cbd1757d-4ccd-40ad-849e-cb09b8279569"
+
+# KV Namespace
+[[kv_namespaces]]
+binding = "CERT_KV"
+id = "10d6d6aa52f9498081eb3d455f5387c8"
