@@ -1,0 +1,9 @@
+{
+  "name": "opalforge-cert-worker",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.2025"
+  }
+}
