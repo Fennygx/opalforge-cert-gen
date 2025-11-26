@@ -5,5 +5,8 @@
   "type": "module",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.2025"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
   }
 }
