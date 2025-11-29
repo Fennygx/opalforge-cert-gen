@@ -1,13 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "types": ["@cloudflare/workers-types"]
-  }
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ES2022"],
+    "types": ["@cloudflare/workers-types", "@types/qrcode"],
+    "noEmit": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
