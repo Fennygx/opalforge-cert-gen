@@ -1,19 +1,31 @@
-name = "cert-generator-worker"
+name = "opalforge-cert-worker"
 main = "src/index.ts"
 compatibility_date = "2025-11-25"
 
-# --- ADD THIS BLOCK ---
+# Enable detailed logging
 [observability]
 logs = { enabled = true, head_sampling_rate = 1, invocation_logs = true, persist = true }
-# ----------------------
 
-# D1 Database
+# D1 Database for persistent certificate storage
 [[d1_databases]]
 binding = "CERT_DB"
 database_name = "cert_db"
 database_id = "cbd1757d-4ccd-40ad-849e-cb09b8279569"
 
-# KV Namespace
+# KV Namespace for caching (fast reads)
 [[kv_namespaces]]
 binding = "KV"
 id = "10d6d6aa52f9498081eb3d455f5387c8"
+
+# Custom domain routing (if you have api.opalforge.tech)
+# Uncomment and configure if needed:
+# [routes]
+# route = "api.opalforge.tech/*"
+# zone_name = "opalforge.tech"
+
+# Build configuration for TypeScript
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "modules"
