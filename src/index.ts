@@ -1,5 +1,5 @@
 import { jsPDF } from "jspdf";
-import qr from "qr-image";
+import QRCode from "qrcode";
 
 export default {
   async fetch(request, env, ctx) {
@@ -23,11 +23,8 @@ export default {
       console.log(`Generating Cert: ${certId} | QR Payload: ${qrPayload}`);
 
       // --- 3. GENERATE QR CODE IMAGE ---
-      // Generate QR as a PNG buffer using the payload URL
-      const qrPng = qr.imageSync(qrPayload, { type: 'png' });
-      
-      // Convert buffer to Uint8Array for jsPDF
-      const qrBytes = new Uint8Array(qrPng);
+      // Generate QR code as a data URL
+      const qrDataUrl = await QRCode.toDataURL(qrPayload);
 
       // --- 4. GENERATE PDF ---
       const doc = new jsPDF({
@@ -46,7 +43,7 @@ export default {
 
       // -- ADD THE QR CODE --
       // x, y, width, height
-      doc.addImage(qrBytes, "PNG", 220, 130, 40, 40); 
+      doc.addImage(qrDataUrl, "PNG", 220, 130, 40, 40); 
       
       // -- OUTPUT --
       const pdfOutput = doc.output("arraybuffer");
