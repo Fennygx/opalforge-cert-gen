@@ -1,14 +1,23 @@
 {
   "name": "opalforge-cert-worker",
   "version": "1.0.0",
-  "main": "src/index.ts",
   "type": "module",
-  "devDependencies": {
-    "@cloudflare/workers-types": "^4.2025"
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "echo 'Build handled by wrangler'",
+    "db:init": "wrangler d1 execute cert_db --file=./schema.sql",
+    "db:init:local": "wrangler d1 execute cert_db --local --file=./schema.sql"
   },
   "dependencies": {
-    "pdf-lib": "^1.17.1",
     "jspdf": "^2.5.2",
     "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251126.0",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.0.0"
   }
 }
