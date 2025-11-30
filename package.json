@@ -1,25 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "@thirdweb-dev/sdk": "^4.0.99",
-    "lucide-react": "^0.553.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "name": "fernando.flatiron",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@tauri-apps/cli": "^2.9.3",
-    "@types/qrcode": "^1.5.6"
-=======
   "name": "opalforge-cert-worker",
   "version": "1.0.0",
   "type": "module",
@@ -29,17 +8,26 @@
     "deploy": "wrangler deploy",
     "build": "echo 'Build handled by wrangler'",
     "db:init": "wrangler d1 execute cert_db --file=./schema.sql",
-    "db:init:local": "wrangler d1 execute cert_db --local --file=./schema.sql"
+    "db:init:local": "wrangler d1 execute cert_db --local --file=./schema.sql",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "lucide-react": "^0.553.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "jspdf": "^2.5.2",
     "qrcode": "^1.5.3"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^2.9.3",
     "@cloudflare/workers-types": "^4.20251126.0",
-    "@types/qrcode": "^1.5.5",
+    "@types/qrcode": "^1.5.6",
     "typescript": "^5.3.0",
     "wrangler": "^3.0.0"
->>>>>>> 93a0a0f0579113056ad31ac1eba9eebf11443fe7
   }
 }
