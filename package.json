@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "@thirdweb-dev/sdk": "^4.0.99",
     "lucide-react": "^0.553.0",
@@ -18,5 +19,27 @@
   "devDependencies": {
     "@tauri-apps/cli": "^2.9.3",
     "@types/qrcode": "^1.5.6"
+=======
+  "name": "opalforge-cert-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "echo 'Build handled by wrangler'",
+    "db:init": "wrangler d1 execute cert_db --file=./schema.sql",
+    "db:init:local": "wrangler d1 execute cert_db --local --file=./schema.sql"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.2",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251126.0",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.0.0"
+>>>>>>> 93a0a0f0579113056ad31ac1eba9eebf11443fe7
   }
 }
